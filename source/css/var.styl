@@ -1,4 +1,5 @@
-$bright-blue = #49B1F5
+// Danger
+$bright-blue = #6c63ff
 $light-theme-color = rgba(105, 97, 255, 0.7)
 $strong-cyan = $theme-color
 $light-orange = #aaa6ff
@@ -27,9 +28,9 @@ $font-size = hexo-config('font.global-font-size') ? convert(hexo-config('font.gl
 $code-font-size = hexo-config('font.code-font-size') ? convert(hexo-config('font.code-font-size')) : var(--global-font-size)
 $font-color = #1F2D3D
 $text-line-height = 2
-// color
 $web-bg = hexo-config('background') && unquote(hexo-config('background'))
 $index_top_img_height = hexo-config('index_top_img_height') ? convert(hexo-config('index_top_img_height')) : 100vh
+// color
 $index_site_info_top = hexo-config('index_site_info_top') ? convert(hexo-config('index_site_info_top')) : 43%
 $light-blue = $theme-color
 $dark-black = #000000
@@ -41,31 +42,31 @@ $whitesmoke = #f5f5f5
 $font-black = #4C4948
 $card-bg = $white
 $text-highlight-color = $font-color
-// font
 $text-hover = $theme-color
 $text-bg-hover = $theme-color
+// font
 $line-height-code-block = 1.6
 $blockquote-color = #6a737d
 $blockquote-padding-color = $themeColorEnable && hexo-config('theme_color.blockquote_padding_color') ? convert(hexo-config('theme_color.blockquote_padding_color')) : #49B1F5
-// hr
 $blockquote-background-color = $themeColorEnable && hexo-config('theme_color.blockquote_background_color') ? alpha(convert(hexo-config('theme_color.blockquote_background_color')), 0.1) : alpha($blockquote-padding-color, 0.1)
 $body-bg = #f7f9fe
+// hr
 $a-link-color = #99a9bf
-// page beatutify
 $sticky-color = $light-orange
 $theme-meta-color = $themeColorEnable && hexo-config('theme_color.meta_color') ? convert(hexo-config('theme_color.meta_color')) : #858585
+// page beatutify
 $sidebar-background = #f6f8fa
-// Global Variables
 $sidebar-width = 300px
 $toc-link-color = #666261
+// Global Variables
 $toc-mobile-width = calc(100% - 80px)
 $toc-mobile-maxWidth = 380px
 $toc-active-color = #fff
 $button-color = #fff
 $button-hover-color = $themeColorEnable && hexo-config('theme_color.button_hover') ? convert(hexo-config('theme_color.button_hover')) : $light-orange
-// Global color & SVG
 $button-bg = $theme-color
 $pseudo-hover = $button-hover-color
+// Global color & SVG
 $scrollbar-color = $themeColorEnable && hexo-config('theme_color.scrollbar_color') ? convert(hexo-config('theme_color.scrollbar_color')) : $theme-color
 $table-thead-bg = #99a9bf
 $reward-pop-up-bg = #f5f5f5
@@ -76,22 +77,22 @@ $search-color = $theme-color
 $search-keyword-highlight = #F47466
 $search-a-color = $font-black
 $comments-switch-first-text = $bright-blue
-// code
 $comments-switch-second-text = $light-orange
 $comments-switch-round = #fff
+// code
 $comments-switch-bg = #f6f8fa
 $noticeOutdate-bg = #ffe6e6
-// page
 $noticeOutdate-color = #ff6666
 $noticeOutdate-border = #ff8080
+// page
 $gallery-color = #fff
 $tag-hide-bg = $theme-color
-// sidebar
 $tag-hide-toggle-bg = #f0f0f0
 $preloader-bg = #37474f
-// aside
+// sidebar
 $preloader-word-color = #fff
 $rightside-bottom = hexo-config('rightside_bottom') ? convert(hexo-config('rightside_bottom')) : 40px
+// aside
 $fireworks-zIndex = hexo-config('fireworks.zIndex') ? hexo-config('fireworks.zIndex') : 99999
 // Tag Plugins - Note
 hexo-config('note.light_bg_offset') is a 'unit' ? ($lbg = unit(hexo-config('note.light_bg_offset'), '%')) : ($lbg = 0)
@@ -124,51 +125,50 @@ $note-success-border = #5cb85c
 $note-success-bg = lighten(spin($note-success-border, 10), 90% + $lbg)
 $note-success-text = $note-success-border
 $note-success-icon = '\f058'
-// Default
 $note-modern-success-border = #d0e6be
 $note-modern-success-bg = lighten(spin($note-modern-success-border, 10), 40% + ($lbg * 4))
+// Default
 $note-modern-success-text = #3c763d
 $note-modern-success-hover = darken(spin($note-modern-success-text, -10), 27%)
 $note-warning-border = #f0ad4e
 $note-warning-bg = lighten(spin($note-warning-border, 10), 88% + $lbg)
 $note-warning-text = $note-warning-border
 $note-warning-icon = '\f06a'
-// Primary
 $note-modern-warning-border = #fae4cd
 $note-modern-warning-bg = lighten(spin($note-modern-warning-border, 10), 43% + ($lbg * 4))
+// Primary
 $note-modern-warning-text = #8a6d3b
 $note-modern-warning-hover = darken(spin($note-modern-warning-text, -10), 18%)
 $note-danger-border = #d9534f
 $note-danger-bg = lighten(spin($note-danger-border, -10), 92% + $lbg)
 $note-danger-text = $note-danger-border
 $note-danger-icon = '\f056'
-// Info
 $note-modern-danger-border = #ebcdd2
 $note-modern-danger-bg = lighten(spin($note-modern-danger-border, 10), 35% + ($lbg * 4))
+// Info
 $note-modern-danger-text = #a94442
 $note-modern-danger-hover = darken(spin($note-modern-danger-text, -10), 22%)
 $color-types = 'blue' 'pink' 'red' 'purple' 'orange' 'green'
 $btn-color = #fff
 $btn-default-color = #777
 $tagsP-blue-color = #428bca
-// Success
 $tagsP-pink-color = #FF69B4
 $tagsP-red-color = #FF0000
+// Success
 $tagsP-orange-color = #FF8C00
 $tagsP-purple-color = #6f42c1
 $tagsP-green-color = #5cb85c
 $tab-border-color = #f0f0f0
 $tab-botton-bg = #f0f0f0
 $tab-botton-color = $font-color
-// Warning
 $tab-button-hover-bg = darken($tab-border-color, 8)
 $tab-active-border-color = $theme-color
+// Warning
 $tab-button-active-bg = $card-bg
 $tab-to-top-color = #99a9bf
 $tab-to-top-hover-color = $theme-color
 $timeline-default-color = $theme-color
 $outline-color = #e5e5e5
 $outline-dark-color = #363a44
-// Danger
 $light-font-color = #a3a4a6
 $light-dark-font-color = #7b7d7f
