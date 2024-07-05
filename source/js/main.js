@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
       $nav = document.getElementById('nav')
     }
 
-    const hideMenuIndex = window.innerWidth <= 768 || headerContentWidth > $nav.offsetWidth - 120
+    const hideMenuIndex = window.innerWidth <= 768 || headerContentWidth > $nav.offsetWidth - 300
     $nav.classList.toggle('hide-menu', hideMenuIndex)
   }
 
@@ -389,7 +389,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (isDown) {
           if (flag !== 'down') {
-            $header.classList.remove('nav-visible')
+            // $header.classList.remove('nav-visible')
             isChatBtn && window.chatBtn.hide()
             flag = 'down'
           }

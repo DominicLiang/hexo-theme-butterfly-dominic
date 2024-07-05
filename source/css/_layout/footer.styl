@@ -1,35 +1,198 @@
 #footer
-  position: relative
-  background-color: $light-blue
-  background-attachment: scroll
-  background-position: bottom
-  background-size: cover
+  position relative
+  background-color $white
+  background-attachment scroll
+  background-position bottom
+  background-size cover
+  color var(--font-color)
+  outline 1px solid $outline-color
 
-  if hexo-config('footer_bg') != false && hexo-config('mask.footer')
+  if (hexo-config('footer_bg') != false && hexo-config('mask.footer'))
     &:before
-      position: absolute
-      width: 100%
-      height: 100%
-      background-color: var(--mark-bg)
-      content: ''
+      position absolute
+      width 100%
+      height 100%
+      background-color var(--mark-bg)
+      content ''
 
 #footer-wrap
-  position: relative
-  padding: 40px 20px
-  color: var(--light-grey)
-  text-align: center
+  position relative
+  color var(--font-color)
+  margin 0 auto
+  height 100%
 
-  a
-    color: var(--light-grey)
+  +minWidth900()
+    max-width 1200px
 
-    &:hover
-      text-decoration: underline
+  +minWidth2000()
+    max-width 1400px
 
-  .footer-separator
-    margin: 0 4px
+  .footer-social
+    width 100%
+    height 50px
 
-  .icp-icon
-    padding: 0 4px
-    max-height: 1.4em
-    width: auto
-    vertical-align: text-bottom
+    .social-content
+      margin-top 50px
+      height 50px
+      -webkit-box-pack center
+      -moz-box-pack center
+      -o-box-pack center
+      -ms-flex-pack center
+      justify-content center
+      display -webkit-box
+      display -moz-box
+      display -ms-flexbox
+      display box
+      display flex
+      -webkit-box-align center
+      -moz-box-align center
+      -o-box-align center
+      -ms-flex-align center
+      -webkit-align-items center
+      align-items center
+
+      #go-to-up
+        line-height 100px
+        margin 0px 35px
+        width 50px
+        height 50px
+        display inline-block
+        vertical-align top
+
+        img
+          width 50px
+          height 50px
+          border-radius 50%
+          outline 1px solid $outline-color
+
+      .icon-content
+        width 50px
+        height 50px
+        margin 0px 20px
+        display inline-block
+        vertical-align top
+        position relative
+
+        .social-icon
+          display block
+          text-align center
+          line-height 50px
+          width 35px
+          height 35px
+          position absolute
+          top 50%
+          left 50%
+          -webkit-transform translate(-50%, -50%)
+          -ms-transform translate(-50%, -50%)
+          transform translate(-50%, -50%)
+          color var(--font-color)
+
+          &:hover
+            color $theme-color
+
+          i
+            font-size 20px
+            position absolute
+            top 50%
+            left 50%
+            -webkit-transform translate(-50%, -50%)
+            -ms-transform translate(-50%, -50%)
+            transform translate(-50%, -50%)
+
+  .footer-link
+    width 100%
+    height 220px
+
+    .link-content
+      height 100%
+      width 100%
+      margin 1rem auto
+      display -webkit-box
+      display -moz-box
+      display -ms-flexbox
+      display box
+      display flex
+      -webkit-box-orient horizontal
+      -moz-box-orient horizontal
+      -o-box-orient horizontal
+      -webkit-flex-direction row
+      -ms-flex-direction row
+      flex-direction row
+      -webkit-box-pack justify
+      -moz-box-pack justify
+      -o-box-pack justify
+      -ms-flex-pack justify
+      -webkit-justify-content space-between
+      justify-content space-between
+      -webkit-box-lines multiple
+      -moz-box-lines multiple
+      -o-box-lines multiple
+      -webkit-flex-wrap wrap
+      -ms-flex-wrap wrap
+      flex-wrap wrap
+
+      // -webkit-box-align center
+      // -moz-box-align center
+      // -o-box-align center
+      // -ms-flex-align center
+      // -webkit-align-items center
+      // align-items center
+      .link-category
+        display inline-block
+        margin 0 auto
+        width 120px
+        height 100%
+        margin-top 25px
+        font-size 17px
+
+        .category_name
+          display block
+          text-align center
+          margin-bottom 20px
+          color $light-font-color
+
+        .category-link
+          display block
+          text-align center
+          margin-bottom 3px
+          color var(--font-color)
+
+          &:hover
+            color $theme-color
+
+  .footer-icon
+    width 100%
+    height 50px
+
+    .icon-content
+      width fit-content
+      margin 0 auto
+      height 100%
+
+      .icon-item
+        line-height 50px
+        margin 0px 5px
+
+  .footer-under
+    width 100%
+    height 45px
+    border-top 1px solid $outline-color
+
+    .copyright, .framework-info, .footer_custom_text
+      line-height 45px
+
+    .copyright
+      float left
+
+    .footer_custom_text
+      float right
+      padding-left 10px
+
+    .framework-info
+      float right
+
+      a
+        color var(--font-color)
+
+        &:hover
+          color $theme-color

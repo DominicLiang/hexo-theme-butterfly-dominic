@@ -1,21 +1,31 @@
 nav#nav
-  span#blog-info
-    a(href=url_for('/') title=config.title)
-      if theme.nav.logo
-        img.site-icon(src=url_for(theme.nav.logo))
-      if theme.nav.display_title
-        span.site-name=config.title
-    
-  #menus
+  #nav-content 
+    span#blog-info
+      .back-home-btn
+        i.fas.fa-grip-vertical
+        .back-menu-list-groups
+          if site.data.menu
+            - let menu = site.data.menu
+            each item in menu
+              span.menu_category= item.class_name
+              each menu_item in item.menu_item 
+                a.menu_item(href=menu_item.link)= menu_item.name
+
+      a#site-name(href=url_for('/'))
+        .title= config.title
+        i.fas.fa-home
+
     if (theme.algolia_search.enable || theme.local_search.enable || theme.docsearch.enable)
       #search-button
         a.site-page.social-icon.search(href="javascript:void(0);")
           i.fas.fa-search.fa-fw
           span=' '+_p('search.title')
-    !=partial('includes/header/menu_item', {}, {cache: true})
 
-    #toggle-menu
-      a.site-page(href="javascript:void(0);")
-        i.fas.fa-bars.fa-fw
+    #menus
+      !=partial('includes/header/menu_item', {}, {cache: true})
+
+      #toggle-menu
+        a.site-page(href="javascript:void(0);")
+          i.fas.fa-bars.fa-fw
 
 

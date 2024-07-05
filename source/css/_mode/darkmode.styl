@@ -1,142 +1,265 @@
-if hexo-config('darkmode.enable') || hexo-config('display_mode') == 'dark'
+if (hexo-config('darkmode.enable') || hexo-config('display_mode') == 'dark')
   [data-theme='dark']
-    --global-bg: darken(#121212, 2)
-    --font-color: alpha(#FFFFFF, .7)
-    --hr-border: alpha(#FFFFFF, .4)
-    --hr-before-color: alpha(#FFFFFF, .7)
-    --search-bg: #121212
-    --search-input-color: alpha(#FFFFFF, .7)
-    --search-a-color: alpha(#FFFFFF, .7)
-    --preloader-bg: darken(#121212, 2)
-    --preloader-color: alpha(#FFFFFF, .7)
-    --tab-border-color: #2c2c2c
-    --tab-botton-bg: #2c2c2c
-    --tab-botton-color: alpha(#FFFFFF, .7)
-    --tab-button-hover-bg: lighten(#121212, 15)
-    --tab-button-active-bg: #121212
-    --card-bg: #121212
-    --sidebar-bg: #121212
-    --btn-hover-color: lighten(#121212, 40)
-    --btn-color: alpha(#FFFFFF, .7)
-    --btn-bg: lighten(#121212, 5)
-    --text-bg-hover: lighten(#121212, 15)
-    --light-grey: alpha(#FFFFFF, .7)
-    --dark-grey: alpha(#FFFFFF, .2)
-    --white: alpha(#FFFFFF, .9)
-    --text-highlight-color: alpha(#FFFFFF, .9)
-    --blockquote-color: alpha(#FFFFFF, .7)
-    --blockquote-bg: lighten(#121212, 10)
-    --reward-pop: lighten(#121212, 10)
-    --toc-link-color: alpha(#FFFFFF, .6)
-    --scrollbar-color: lighten(#121212, 25)
-    --timeline-bg: lighten(#121212, 5)
-    --zoom-bg: #121212
-    --mark-bg: alpha($dark-black, .6)
+    --global-bg darken(#282c34, 2)
+    --font-color alpha(#FFFFFF, 0.7)
+    --hr-border alpha(#FFFFFF, 0.4)
+    --hr-before-color alpha(#FFFFFF, 0.7)
+    --search-bg #282c34
+    --search-input-color alpha(#FFFFFF, 0.7)
+    --search-a-color alpha(#FFFFFF, 0.7)
+    --preloader-bg darken(#282c34, 2)
+    --preloader-color alpha(#FFFFFF, 0.7)
+    --tab-border-color #2c2c2c
+    --tab-botton-bg #2c2c2c
+    --tab-botton-color alpha(#FFFFFF, 0.7)
+    --tab-button-hover-bg lighten(#282c34, 15)
+    --tab-button-active-bg #282c34
+    --card-bg #282c34
+    --sidebar-bg #282c34
+    --btn-hover-color lighten(#282c34, 40)
+    --btn-color alpha(#FFFFFF, 0.7)
+    --btn-bg lighten(#282c34, 5)
+    --text-bg-hover lighten(#282c34, 15)
+    --light-grey alpha(#FFFFFF, 0.7)
+    --dark-grey alpha(#FFFFFF, 0.2)
+    --white alpha(#FFFFFF, 0.9)
+    --text-highlight-color alpha(#FFFFFF, 0.9)
+    --blockquote-color alpha(#FFFFFF, 0.7)
+    --blockquote-bg lighten(#282c34, 10)
+    --reward-pop lighten(#282c34, 10)
+    --toc-link-color alpha(#FFFFFF, 0.6)
+    --scrollbar-color lighten(#282c34, 25)
+    --timeline-bg lighten(#282c34, 5)
+    --zoom-bg #282c34
+    --mark-bg alpha($dark-black, 0.6)
 
     #web_bg:before
-      position: absolute
-      width: 100%
-      height: 100%
-      background-color: alpha($dark-black, .7)
-      content: ''
+      position absolute
+      width 100%
+      height 100%
+      background-color alpha($dark-black, 0.7)
+      content ''
 
     #article-container
       code
-        background: #2c2c2c
+        background #2c2c2c
 
       pre > code
-        background: lighten(#121212, 2)
+        background lighten(#282c34, 2)
 
       figure.highlight
-        box-shadow: none
+        // box-shadow: none
 
       .note
         code
-          background: $code-background
+          background $code-background
 
       .aplayer
-        filter: brightness(.8)
+        filter brightness(0.8)
 
       kbd
-        border-color: #696969
-        background-color: #525252
-        color: #e2f1ff
+        border-color #696969
+        background-color #525252
+        color #e2f1ff
 
     // 頭部
     #page-header
-      &.nav-fixed > #nav,
-      &.not-top-img > #nav
-        background: alpha(#121212, .8)
-        box-shadow: 0 5px 6px -5px rgba(133, 133, 133, 0)
+      &.nav-fixed > #nav, &.not-top-img > #nav
+        background alpha(#181b1f, 1)
+        background #1d2025
+        // box-shadow: 0 5px 6px -5px rgba(133, 133, 133, 0)
 
     #post-comment
       .comment-switch
-        if hexo-config('comments.text')
-          background: #2c2c2c !important
+        if (hexo-config('comments.text'))
+          background #2c2c2c !important
 
         #switch-btn
-          filter: brightness(.8)
+          filter brightness(0.8)
 
     // note
-    if hexo-config('note.style') == 'modern' || hexo-config('note.style') == 'flat'
+    if (hexo-config('note.style') == 'modern' || hexo-config('note.style') == 'flat')
       .note
-        filter: brightness(.8)
+        filter brightness(0.8)
 
     // hide-tags
-    .hide-button,
-    .btn-beautify,
-    .hl-label,
-    .post-outdate-notice,
-    .error-img,
-    #article-container iframe,
-    .gist,
-    .ads-wrap
-      filter: brightness(.8)
+    .hide-button, .btn-beautify, .hl-label, .post-outdate-notice, .error-img, #article-container iframe, .gist, .ads-wrap
+      filter brightness(0.8)
 
     img
-      if hexo-config('lazyload.enable') && hexo-config('lazyload.blur') && !hexo-config('lazyload.placeholder')
-        filter: blur(0) brightness(.8)
+      if (hexo-config('lazyload.enable') && hexo-config('lazyload.blur') && !hexo-config('lazyload.placeholder'))
+        filter blur(0) brightness(0.8)
       else
-        filter: brightness(.8)
+        filter brightness(0.8)
 
     #aside-content .aside-list > .aside-list-item:not(:last-child)
-      border-bottom: 1px dashed alpha(#FFFFFF, .1)
+      border-bottom 1px dashed alpha(#FFFFFF, 0.1)
 
     // Gitalk
     #gitalk-container
-      filter: brightness(.8)
+      filter brightness(0.8)
 
       svg
-        fill: alpha(#FFFFFF, .9) !important
+        fill alpha(#FFFFFF, 0.9) !important
 
     // Disqusjs 反代模式下的適配
     #disqusjs
       #dsqjs
-        &:hover,
-        &:focus,
-        .dsqjs-tab-active,
-        .dsqjs-no-comment
-          color: alpha(#FFFFFF, .7)
+        &:hover, &:focus, .dsqjs-tab-active, .dsqjs-no-comment
+          color alpha(#FFFFFF, 0.7)
 
         .dsqjs-order-label
-          background-color: lighten(#121212, 5)
+          background-color lighten(#282c34, 5)
 
         .dsqjs-post-body
-          color: alpha(#FFFFFF, .7)
+          color alpha(#FFFFFF, 0.7)
 
-          code,
-          pre
-            background: #2c2c2c
+          code, pre
+            background #2c2c2c
 
           blockquote
-            color: alpha(#FFFFFF, .7)
+            color alpha(#FFFFFF, 0.7)
 
     #artitalk_main #lazy
-      background: #121212
+      background #282c34
 
     #operare_artitalk .c2
-      background: #121212
+      background #282c34
 
     #card-toc
       +maxWidth900()
-        background: lighten(#121212, 5)
+        background lighten(#282c34, 5)
+
+    #footer
+      background-color #1d2025
+      outline 1px solid $outline-dark-color !important
+
+    .main-hero-waves-area
+      .parallax > use:nth-child(1)
+        fill #18171dc8 !important
+
+      .parallax > use:nth-child(2)
+        fill #18171d80 !important
+
+      .parallax > use:nth-child(3)
+        fill #18171d3e !important
+
+      .parallax > use:nth-child(4)
+        fill #24272e !important
+
+    .back-menu-list-groups
+      border 1px solid $outline-dark-color !important
+
+    .card-widget
+      outline 1px solid $outline-dark-color !important
+
+      &:hover
+        outline 1px solid $theme-color !important
+
+    .error-content
+      outline 1px solid $outline-dark-color !important
+
+      &:hover
+        outline 1px solid $theme-color !important
+
+    .layout
+      & > div:first-child:not(.recent-posts)
+        outline 1px solid $outline-dark-color !important
+
+        &:hover
+          outline 1px solid $theme-color !important
+
+    #recent-posts
+      & > .recent-post-item
+        outline 1px solid $outline-dark-color !important
+
+        &:hover
+          outline 1px solid $theme-color !important
+
+    #page-header
+      #nav
+        border-bottom 1px solid $outline-dark-color !important
+
+      &.not-home-page
+        #nav
+          border-bottom 1px solid #ffffff00 !important
+
+      &.post-bg
+        #nav
+          border-bottom 1px solid #ffffff00 !important
+
+      &.nav-fixed
+        #nav
+          border-bottom 1px solid $outline-dark-color !important
+
+    #go-to-up
+      img
+        outline 1px solid $outline-dark-color !important
+
+    .category_name
+      color $light-dark-font-color !important
+
+    .footer-under
+      border-top 1px solid $outline-dark-color !important
+
+    #loading-box
+      .loading-left-bg
+        background-color #21252b !important
+
+      .loading-right-bg
+        background-color #21252b !important
+
+    .menus_items
+      .menus_item
+        &:hover
+          .menus_item_child
+            outline 1px solid $outline-dark-color !important
+
+    #article-container
+      .flink
+        .flink-list
+          & > .flink-list-item
+            outline 1px solid $outline-dark-color !important
+
+    #article-container
+      figure.gallery-group
+        outline 1px solid $outline-dark-color !important
+
+    .gallery-items
+      .item
+        outline 1px solid $outline-dark-color !important
+
+        &:hover
+          outline 1px solid $theme-color !important
+
+    #article-container
+      .tabs
+        outline 1px solid $outline-dark-color !important
+
+        .tab
+          &:not(.active)
+            background #24272e !important
+
+            &:hover
+              background #202329 !important
+
+    .card-archives ul.card-archive-list > .card-archive-list-item, .card-categories ul.card-category-list > .card-category-list-item
+      a
+        outline 1px solid $outline-dark-color !important
+
+        &:hover
+          outline 1px solid $theme-color !important
+
+    #navigation-bar
+      outline 1px solid $outline-dark-color !important
+
+      &:hover
+        outline 1px solid $theme-color !important
+
+    #pagination
+      .page-number, .extend, .next
+        &:not(.current)
+          outline 1px solid $outline-dark-color !important
+
+        &:hover
+          outline 1px solid $theme-color !important

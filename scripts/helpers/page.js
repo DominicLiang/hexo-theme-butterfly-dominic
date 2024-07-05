@@ -15,6 +15,16 @@ hexo.extend.helper.register('page_description', function () {
   }
 })
 
+hexo.extend.helper.register('cloudCategories', function (categories, unit) {
+  let result = ''
+  categories.forEach((cat, i) => {
+    let style = `font-size: ${1}${unit}; `
+    result += `<a class="categories-page-tag" href="${this.url_for(cat.path)}" style="${style}">${cat.name}</a>`
+  })
+
+  return result
+})
+
 hexo.extend.helper.register('cloudTags', function (options = {}) {
   const env = this
   let { source, minfontsize, maxfontsize, limit, unit, orderby, order } = options
@@ -43,6 +53,42 @@ hexo.extend.helper.register('cloudTags', function (options = {}) {
   })
   return result
 })
+
+hexo.extend.helper.register('cloudTagsWithSup', function (options = {}) {
+  const env = this
+  let { source, limit, unit, orderby, order } = options
+
+  let result = ''
+  if (limit > 0) {
+    source = source.limit(limit)
+  }
+
+  source.sort(orderby, order).forEach(tag => {
+    let style = `font-size: ${1}${unit}; `
+    style += `margin: 0 5px; `
+    style += `border-radius: 8px; `
+    result += `<a href="${env.url_for(tag.path)}" style="${style}">${tag.name}<sup>${tag.length}</sup></a>`
+  })
+  return result
+})
+
+hexo.extend.helper.register('cloudTagsWithSpan', function (options = {}) {
+  const env = this
+  let { source, limit, unit, orderby, order } = options
+
+  let result = ''
+  if (limit > 0) {
+    source = source.limit(limit)
+  }
+
+  source.sort(orderby, order).forEach(tag => {
+    let style = `font-size: ${1}${unit}; `
+    result += `<a class="tags-page-tag" href="${env.url_for(tag.path)}" style="${style}">${tag.name}`
+    result += `<span class="tags-page-count">${tag.length}</span></a>`
+  })
+  return result
+})
+
 
 hexo.extend.helper.register('urlNoIndex', function (url = null, trailingIndex = false, trailingHtml = false) {
   return prettyUrls(url || this.url, { trailing_index: trailingIndex, trailing_html: trailingHtml })

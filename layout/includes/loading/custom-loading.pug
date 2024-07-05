@@ -1,0 +1,36 @@
+#loading-box
+    .loading-left-bg
+    .loading-right-bg
+    .loading-box
+        .loader-box
+            .loader-square
+            .loader-square
+            .loader-square
+            .loader-square
+            .loader-square
+            .loader-square
+            .loader-square
+
+script.
+    (()=>{
+        const $loadingBox = document.getElementById('loading-box')
+        const $body = document.body
+        const preloader = {
+            endLoading: () => {
+                $body.style.overflow = ''
+                $loadingBox.classList.add('loaded')
+            },
+            initLoading: () => {
+                $body.style.overflow = 'hidden'
+                $loadingBox.classList.remove('loaded')
+            }
+        }
+
+        preloader.initLoading()
+        window.addEventListener('load',() => { preloader.endLoading() })
+
+        if (!{theme.pjax && theme.pjax.enable}) {
+            document.addEventListener('pjax:send', () => { preloader.initLoading() })
+            document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+        }
+    })()

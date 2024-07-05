@@ -9,7 +9,7 @@ if theme.aside.card_post_series.enable
         - const { path, title = _p('no_title'), cover, cover_type, date:dateA } = item
         - let link = url_for(path)
         - let no_cover = cover === false || !theme.cover.aside_enable ? 'no-cover' : ''
-        .aside-list-item(class=no_cover)
+        .aside-list-item(class=no_cover onclick=`location.href='${url_for(link)}';`)
           if cover && theme.cover.aside_enable
             a.thumbnail(href=link title=title)
               if cover_type === 'img'

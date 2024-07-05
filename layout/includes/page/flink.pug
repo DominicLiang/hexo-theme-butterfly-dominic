@@ -57,7 +57,7 @@
       if site.data.link
         - let result = ""
         each i in site.data.link
-          - let className = i.class_name ? markdown(`## ${i.class_name}`) : ""
+          - let className = i.class_name ? markdown(`## ${i.class_name}`) : "" 
           - let classDesc = i.class_desc ? `<div class="flink-desc">${i.class_desc}</div>` : ""
 
           - let listResult = ""
@@ -80,3 +80,20 @@
 
         - pageContent = result + pageContent
     != pageContent
+  .link-btn
+    button#link-button(type="button" ,title="申请友链")= "点我申请友链" 
+
+script.
+  (()=>{
+    var btn = document.getElementById("link-button");  
+    btn.onclick =function(){  
+      var input = document.getElementById("wl-edit");
+      if (!input) return;
+      const evt = new Event("input", { cancelable: true, bubbles: true });
+      const defaultPlaceholder = "name: 博客名字\nlink: 博客链接\navatar: 博客头像链接\ndescr: 博客的描述文字\n";
+      input.value = defaultPlaceholder;
+      input.dispatchEvent(evt);
+      input.focus();
+      input.setSelectionRange(-1, -1);
+    }  
+  })()

@@ -5,6 +5,17 @@
 
 'use strict'
 
+hexo.extend.helper.register('cloudCategoriesWithSpan', function (categories, unit) {
+  let result = ''
+  categories.forEach((cat, i) => {
+    let style = `font-size: ${1}${unit}; `
+    result += `<a class="categories-page-tag" href="${this.url_for(cat.path)}" style="${style}">${cat.name}`
+    result += `<span class="categories-page-count">${cat.length}</span></a>`
+  })
+
+  return result
+})
+
 hexo.extend.helper.register('aside_categories', function (categories, options) {
   if (!options && (!categories || !Object.prototype.hasOwnProperty.call(categories, 'length'))
   ) {

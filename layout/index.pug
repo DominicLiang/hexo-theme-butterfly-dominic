@@ -3,5 +3,10 @@ extends includes/layout.pug
 block content
   include ./includes/mixins/post-ui.pug
   #recent-posts.recent-posts
+    #navigation-bar
+      a.home-page-btn(href=`${url_for()}`)= "首页"
+      !=cloudCategories(site.categories, "em")
+      i.fa-regular.fa-angles-right(style="font-size:1rem; font-weight:700;") 
+      a.more-btn(href=`${url_for("categories/")}`)= "更多"
     +postUI
     include includes/pagination.pug

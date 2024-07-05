@@ -1,37 +1,48 @@
-.category-lists
-  .category-title
-    font-size: 2.57em
+.categories-cloud
+  &-list
+    display flex
+    flex-direction row
+    flex-wrap wrap
+    margin 0 -0.35rem
+    margin-bottom 2rem
+    justify-content center
 
-    +maxWidth768()
-      font-size: 2em
-
-  .category-list
-    margin-bottom: 0
-
-    a
-      color: var(--font-color)
+    .categories-page-tag
+      transition all 0.3s
+      align-items center
+      padding 0.4rem 0.7rem
+      border-radius 8px
+      outline 1px solid $light-theme-color
+      background rgba(255, 255, 255, 0)
+      color var(--font-color)
+      margin 5px 5px
 
       &:hover
-        color: $text-hover
+        outline 1px solid $theme-color
+        background $theme-color
+        color $white !important
 
-    .category-list-count
-      margin-left: 8px
-      color: $theme-meta-color
+      +maxWidth768()
+        zoom 0.85
 
-      &:before
-        content: '('
+      .categories-page-count
+        padding 0px 0.5rem
+        margin-left 10px
+        border-radius 4px
+        background $light-theme-color
+        transition all 0.3s
+        color $white
 
-      &:after
-        content: ')'
+    .categories-page-tag:hover .categories-page-count
+      background $white
+      color $theme-color
 
-  ul
-    padding: 0 0 0 20px
-    @extend .list-beauty
+  &-title
+    font-size 2.57em
 
-    ul
-      padding-left: 4px
+    +maxWidth768()
+      font-size 2em
 
-    li
-      position: relative
-      margin: 6px 0
-      padding: .12em .4em .12em 1.4em
+h1.page-title
+  & + .tag-cloud-list
+    text-align left
