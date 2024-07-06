@@ -128,8 +128,8 @@
     #nav
       border-bottom 1px solid #ffffff00 !important
 
-    .back-home-btn
-      color var(--font-color)
+    .back-home-btn, #site-name
+      color var(--light-gray)
 
       &:hover
         color $white
@@ -154,8 +154,8 @@
     #nav
       border-bottom 1px solid #ffffff00 !important
 
-    .back-home-btn
-      color var(--font-color)
+    .back-home-btn, #site-name
+      color var(--light-gray)
 
       &:hover
         color $white
@@ -186,9 +186,6 @@
       #blog-info
         color var(--font-color)
 
-        &:hover
-          color $light-blue
-
       a, #toggle-menu
         color var(--font-color)
         text-shadow none
@@ -208,9 +205,6 @@
 
       #blog-info
         color var(--font-color)
-
-        &:hover
-          color $light-blue
 
       a, #toggle-menu
         color var(--font-color)
@@ -412,7 +406,6 @@ a
   align-items center
   justify-content center
   margin-right 4px
-  transition 0.3s
   border-radius 8px
   color var(--font-color)
 
@@ -462,14 +455,13 @@ a
 #site-name
   text-shadow 2px 2px 4px rgba($dark-black, 0.15)
   font-weight bold
-  padding 0 2px
+  padding 0 8px
   height 35px
   line-height 35px
   position relative
   display flex
   align-items center
   justify-content center
-  transition 0.3s
   border-radius 8px
 
   i
@@ -477,14 +469,11 @@ a
     top 50%
     left 50%
     transform translate(-50%, -50%)
-    transition 0.3s
     opacity 0
     color $white
 
   .title
-    transition 0.3s
     opacity 1
-    color var(--font-color) !important
 
   &:hover
     background $theme-color

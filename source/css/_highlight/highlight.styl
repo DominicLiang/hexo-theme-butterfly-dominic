@@ -15,10 +15,10 @@ wordWrap = $highlight_enable && !$highlight_line_number && hexo-config('code_wor
 
 [data-theme='dark']
   --hl-color alpha(#FFFFFF, 0.7)
-  --hl-bg lighten(#121212, 2)
-  --hltools-bg lighten(#121212, 3)
+  --hl-bg #24272e
+  --hltools-bg #1d1f23
   --hltools-color #90a4ae
-  --hlnumber-bg lighten(#121212, 2)
+  --hlnumber-bg #21252b
   --hlnumber-color alpha(#FFFFFF, 0.4)
   --hlscrollbar-bg lighten(#121212, 5)
   --hlexpand-bg linear-gradient(180deg, rgba(lighten(#121212, 2), 0.6), rgba(lighten(#121212, 2), 0.9))
@@ -64,6 +64,14 @@ $code-block
   figure.highlight
     @extend $code-block
     position relative
+    border-radius 8px 8px 4px 4px !important
+    outline 1px solid $outline-color
+
+    .highlight-tools
+      outline 1px solid $outline-color
+
+    .gutter
+      outline 1px solid $outline-color
 
     pre
       margin 0

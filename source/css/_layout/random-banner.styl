@@ -1,0 +1,64 @@
+#random-article
+    border-radius 8px
+    overflow hidden
+    outline 1px solid $outline-color
+    margin-bottom 20px
+    transition 0.3s
+
+    &:hover
+        outline 1px solid $theme-color
+
+        .banner
+            .right
+                transform scale(1.1)
+
+            .left
+                .icon
+                    color var(--font-color)
+
+                .text
+                    color var(--font-color)
+
+                    .text2
+                        color $theme-color
+
+                    i
+                        color $theme-color
+
+    .banner
+        width 100%
+        height 200px
+        background var(--card-bg)
+        display flex
+        flex-direction row
+
+        .left
+            padding 40px 0px 40px 80px
+            flex-grow 1
+            font-size 2rem
+            align-content flex-start
+            transition all 0.3s
+
+            .icon
+                display flex
+                align-content flex-start
+                font-size 4rem
+                color var(--font-color)
+
+            .text
+                color var(--font-color)
+
+                .text2
+                    transition 0.3s
+
+                i
+                    transition 0.3s
+                    margin-left 10px
+
+        .right
+            padding-right 50px
+            transform scale(1.02)
+            transition all 0.3s
+
+            img
+                height 100%

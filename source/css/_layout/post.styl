@@ -201,8 +201,9 @@ beautify()
     position: relative
     margin: 40px 0 10px
     padding: 10px 16px
-    border: 1px solid var(--light-grey)
-    // transition: box-shadow .3s ease-in-out
+    border: 1px solid $outline-color
+    border-radius: 8px
+    transition: .3s 
 
     &:before
       @extend .fontawesomeIcon
@@ -214,6 +215,7 @@ beautify()
       font-size: 1.3em
 
     &:hover
+      border 1px solid $theme-color
       // box-shadow: 0 0 8px 0 rgba(232, 237, 250, .6), 0 2px 4px 0 rgba(232, 237, 250, .5)
 
     .post-copyright
@@ -230,8 +232,10 @@ beautify()
         a
           text-decoration: underline
           word-break: break-word
+          color: $grey
 
           &:hover
+            color: $theme-color
             text-decoration: none
 
   .post-outdate-notice

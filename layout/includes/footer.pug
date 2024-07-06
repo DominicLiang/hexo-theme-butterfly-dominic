@@ -7,6 +7,10 @@
             if icon.name == "返回顶部"
               button#go-to-up(type="button" ,title="返回顶部")
                 img(src=icon.icon)
+            else if icon.name == "RSS"
+              .icon-content
+                a.social-icon(href=url_for("/rss2.xml"), title=icon.name)
+                  i(class=icon.icon)
             else 
               .icon-content
                 a.social-icon(href=icon.link, title=icon.name)

@@ -3,6 +3,18 @@ extends includes/layout.pug
 block content
   include ./includes/mixins/post-ui.pug
   #recent-posts.recent-posts
+    #random-article
+      a.random(href=`${url_for(random(site.posts))}`)
+        .banner 
+          .left
+            .icon 
+              i.fa-solid.fa-dice
+            span.text= "随便"
+              span.text2= "逛逛"
+              i.fa-solid.fa-arrow-right
+
+          .right
+            img(src="/images/random.svg")
     #navigation-bar
       a.home-page-btn(href=`${url_for()}`)= "首页"
       !=cloudCategories(site.categories, "em")
@@ -10,3 +22,4 @@ block content
       a.more-btn(href=`${url_for("categories/")}`)= "更多"
     +postUI
     include includes/pagination.pug
+
